@@ -69,8 +69,8 @@ export default {
         currentuser.role = role;
         currentuser.email = email;
         localStorage.setItem("loggedInUser", JSON.stringify(currentuser));
+        this.$router.push("/myprofile");
         window.location.reload();
-        history.pushState("", "", "/");
       } else {
         console.log("start editing");
       }
