@@ -3,7 +3,7 @@
 
 ## Live Demo [vuevuevue](http://vuevue.netlify.com)
 demo instruction:
-1. see in your browser **console** to get *username and password* for login
+1. see in your browser **console** (or press f12 and go to console tab) to get *username and password* for login
 
 ## Inside this app
 1. Data is fetched with **AXIOS** from [Random User](https://randomuser.me) will fetch new set of data on refresh
