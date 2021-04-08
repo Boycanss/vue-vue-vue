@@ -70,6 +70,7 @@ export default {
         currentuser.email = email;
         localStorage.setItem("loggedInUser", JSON.stringify(currentuser));
         window.location.reload();
+        history.pushState("", "", "/");
       } else {
         console.log("start editing");
       }
