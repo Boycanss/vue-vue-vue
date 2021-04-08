@@ -35,7 +35,7 @@ export default {
   components: { Div, BigImageContainer, EmployeeInfo },
   data() {
     return {
-      loggedInUser: {},
+      loggedInUser: JSON.parse(localStorage.getItem("loggedInUser")),
       editing: false,
       editValue: {
         name: { first: "", last: "" },
@@ -69,8 +69,9 @@ export default {
         currentuser.role = role;
         currentuser.email = email;
         localStorage.setItem("loggedInUser", JSON.stringify(currentuser));
-        this.$router.push("/myprofile");
-        window.location.reload();
+        this.loggedInUser = currentuser;
+        // this.$router.push("/myprofile");
+        // window.location.reload();
       } else {
         console.log("start editing");
       }

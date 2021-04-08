@@ -22,11 +22,13 @@ const routes = [
   {
     path: "/myprofile",
     name: "MyProfile",
+    props: true,
     component: MyPage,
   },
   {
     path: "/ggwp",
     name: "try page",
+    props: true,
     component: Employee,
   },
   // {
