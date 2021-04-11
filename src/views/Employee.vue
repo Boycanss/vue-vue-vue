@@ -1,7 +1,11 @@
 <template>
   <Div>
     <div class="section">
-      <h1><b>Employees</b></h1>
+      <div class="sectionHeader">
+        <h1 class="sectionTitle"><b>Employees</b></h1>
+        <Search />
+      </div>
+
       <br />
       <div v-if="users.length === 0">
         <BigSpinner />
@@ -28,10 +32,11 @@
 import Div from "../components/ThemedDivSecondary";
 import EmployeeCard from "../components/cards/EmployeeCard-S";
 import BigSpinner from "../components/spinners/BigSpinner";
+import Search from "../components/containers/Search";
 import { Collab } from "../store/index";
 
 export default {
-  components: { Div, EmployeeCard, BigSpinner },
+  components: { Div, EmployeeCard, BigSpinner, Search },
   data() {
     return {
       users: Collab.state.collaborators,
@@ -56,5 +61,25 @@ export default {
   margin: auto;
   padding-top: 20px;
   min-height: 92.5vh;
+}
+.sectionHeader {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+input.inputSearch {
+  width: 260px;
+  border-radius: 30px;
+}
+
+@media screen and (max-width: 700px) {
+  h1.sectionTitle {
+    font-size: 1.5rem;
+    margin: 0;
+  }
+  input.inputSearch {
+    width: 200px;
+  }
 }
 </style>

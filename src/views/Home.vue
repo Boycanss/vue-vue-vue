@@ -8,7 +8,12 @@
         <LandingPage />
       </div>
       <div v-else>
-        <Employee />
+        <div class="flexRow">
+          <!-- <RoleIcons /> -->
+          <div :style="'width:100%'">
+            <Employee />
+          </div>
+        </div>
       </div>
     </div>
   </Div>
@@ -19,6 +24,7 @@ import Div from "../components/ThemedDivSecondary";
 import LandingPage from "./LandingPage";
 // import { Auth } from "../store/index";
 import Employee from "./Employee.vue";
+// import RoleIcons from "../components/icons/RoleIcons";
 
 export default {
   components: { Div, LandingPage, Employee },

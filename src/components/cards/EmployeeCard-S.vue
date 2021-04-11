@@ -114,7 +114,10 @@ a.detailLink:hover {
     display: none;
   }
   .cardContainer {
-    height: 235px;
+    height: 200px;
+  }
+  .headerCard{
+    height: 50%;
   }
 }
 </style>

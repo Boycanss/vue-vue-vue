@@ -20,6 +20,8 @@ export const Theme = new Vuex.Store({
 export const Collab = new Vuex.Store({
   state: {
     collaborators: [],
+    searchData: [],
+    searchKey: "",
   },
   mutations: {
     getCollaborators(state) {
@@ -36,7 +38,24 @@ export const Collab = new Vuex.Store({
           data["role"] = roles[rol];
         });
         state.collaborators = results;
+        state.searchData = results;
       });
+    },
+    search(state, keyword) {
+      state.searchKey = keyword;
+      const result = [];
+      const data = state.searchData;
+      data.forEach((dt) => {
+        const fullName = dt.name.first + " " + dt.name.last;
+        const name = fullName.toLowerCase();
+        const res = name.search(`${keyword}`);
+        if (res !== -1) {
+          result.push(dt);
+        } else {
+          return;
+        }
+      });
+      state.collaborators = result;
     },
   },
 });
